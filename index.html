@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Finder - Discover Your Next Passion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Hobby Finder</h1>
+            <p class="subtitle">Discover hobbies that match your interests and budget</p>
+        </header>
+
+        <main>
+            <div class="form-section">
+                <h2>Tell us about yourself</h2>
+                
+                <div class="form-group">
+                    <label for="interests">What are you interested in? (comma-separated)</label>
+                    <input 
+                        type="text" 
+                        id="interests" 
+                        placeholder="e.g., music, technology, nature, sports, art"
+                        autocomplete="off"
+                    >
+                    <small>Enter keywords like: music, art, sports, technology, nature, cooking, reading, gaming, fitness, photography, etc.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget: $<span id="budgetValue">125</span></label>
+                    <div class="budget-controls">
+                        <input 
+                            type="range" 
+                            id="budgetSlider" 
+                            min="0" 
+                            max="500" 
+                            value="125" 
+                            step="5"
+                        >
+                        <div class="budget-input-wrapper">
+                            <span class="currency">$</span>
+                            <input 
+                                type="number" 
+                                id="budgetInput" 
+                                min="0" 
+                                max="500" 
+                                value="125"
+                                placeholder="0"
+                            >
+                        </div>
+                    </div>
+                    <small>Drag the slider or type your budget amount</small>
+                </div>
+
+                <button id="findHobbies" class="btn-primary">
+                    <span id="buttonText">🤖 Get AI Recommendations</span>
+                    <span id="loadingSpinner" class="spinner hidden">⏳</span>
+                </button>
+            </div>
+
+            <div id="results" class="results-section hidden">
+                <h2>Recommended Hobbies</h2>
+                <div id="hobbyList" class="hobby-grid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with ❤️ to help you discover new passions</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
